@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="icon" href="images.png" type="image/x-icon" />
-    <title>Prueba formularios</title>
+    <title>Al's Burgurs</title>
+    <script type="module" src="index.js" defer></script>
   </head>
   <body>
     <section id="overlay">
@@ -17,14 +18,14 @@
           <input
             type="text"
             name="proteina"
-            id="proteina"
-            placeholder="Dinos tu carne favorita"
+            class="protein"
+            placeholder="Pollo, ternera o añojo"
           />
         </section>
         <hr />
         <section class="filetes">
           <label for="amount">¿Cuántos filetes quieres?</label>
-          <input type="number" name="amount" id="amount" />
+          <input type="number" name="amount" class="amount" />
         </section>
         <hr />
         <section class="plancha">
@@ -34,7 +35,7 @@
           <input
             type="range"
             name="doneness"
-            id="doneness"
+            class="doneness"
             value="3"
             min="1"
             max="5"
@@ -43,13 +44,28 @@
         </section>
         <hr />
         <section class="toppings">
-          <span>What toppings would you like?</span>
+          <span>¿Quieres algún topping?</span>
           <br />
-          <input type="checkbox" name="topping" id="lechuga" value="lechuga" />
+          <input
+            type="checkbox"
+            name="topping"
+            class="topping"
+            value="lechuga"
+          />
           <label for="lechuga">lechuga</label>
-          <input type="checkbox" name="topping" id="tomate" value="tomate" />
+          <input
+            type="checkbox"
+            name="topping"
+            class="topping"
+            value="tomate"
+          />
           <label for="tomate">tomate</label>
-          <input type="checkbox" name="topping" id="cebolla" value="cebolla" />
+          <input
+            type="checkbox"
+            name="topping"
+            class="topping"
+            value="cebolla"
+          />
           <label for="cebolla">cebolla</label>
         </section>
         <hr />
@@ -64,7 +80,7 @@
         <hr />
         <section class="pan">
           <label for="bun">¿Qué tipo de pan te gusta?</label>
-          <select name="bun" id="bun" required>
+          <select name="bun" class="bun" required>
             <option value=""></option>
             <option value="sesame">Sésamo</option>
             <option value="pita">Pita</option>
