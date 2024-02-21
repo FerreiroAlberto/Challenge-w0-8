@@ -1,7 +1,2 @@
-import {
-  onClickButtonRange,
-  onClickButtonRadio,
-  onTextBoxInput,
-  onNumberInput,
-  onDropdownInput,
-} from './functions.js';
+import { getOrder } from './functions.js';
+getOrder();

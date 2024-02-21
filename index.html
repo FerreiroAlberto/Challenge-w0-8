@@ -2,13 +2,13 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
     <link rel="icon" href="images.png" type="image/x-icon" />
     <title>Al's Burgurs</title>
     <script type="module" src="index.js" defer></script>
   </head>
   <body>
-    <section id="overlay">
+    <section class="main">
       <img src="AlBurger.jpg" alt="Al's Burgers Logo" class="logo" />
       <hr />
       <form class="formulario">
@@ -25,7 +25,7 @@
         <hr />
         <section class="filetes">
           <label for="amount">¿Cuántos filetes quieres?</label>
-          <input type="number" name="amount" class="amount" />
+          <input type="number" name="amount" class="amount" max="3" />
         </section>
         <hr />
         <section class="plancha">
@@ -69,33 +69,39 @@
           <label for="cebolla">cebolla</label>
         </section>
         <hr />
-        <section class="queso">
+        <section class="cheese">
           <span>Añádele queso</span>
           <br />
-          <input type="radio" name="cheese" class="yes" value="yes" />
-          <label for="yes">Sí</label>
+          <input type="radio" name="cheese" class="yes" value="si" />
+          <label for="si">Sí</label>
           <input type="radio" name="cheese" class="no" value="no" />
           <label for="no">No</label>
         </section>
         <hr />
-        <section class="pan">
-          <label for="bun">¿Qué tipo de pan te gusta?</label>
-          <select name="bun" class="bun" required>
+        <section class="bun">
+          <label for="pan">¿Qué tipo de pan te gusta?</label>
+          <select name="pan" class="pan" required>
             <option value=""></option>
-            <option value="sesame">Sésamo</option>
-            <option value="pita">Pita</option>
-            <option value="pretzel">Pretzel</option>
+            <option value="sésamo">Sésamo</option>
+            <option value="brioche">Brioche</option>
+            <option value="mollete">Mollete</option>
           </select>
         </section>
         <hr />
-        <section class="salsa">
-          <label for="sauce">Añade tu salsa</label>
-          <input list="sauces" class="sauce" name="sauce" />
-          <datalist class="sauces">
-            <option value="ketchup"></option>
-            <option value="mayo"></option>
-            <option value="mostaza"></option>
-          </datalist>
+        <section class="sauces">
+          <span>¿Quieres alguna salsa?</span>
+          <br />
+          <input type="checkbox" name="sauces" class="sauces" value="ketchup" />
+          <label for="ketchup">Ketchup</label>
+          <input type="checkbox" name="sauces" class="sauces" value="mostaza" />
+          <label for="mostaza">Mostaza</label>
+          <input
+            type="checkbox"
+            name="sauces"
+            class="sauces"
+            value="mayonesa"
+          />
+          <label for="mayonesa">Mayonesa</label>
         </section>
         <hr />
         <section class="extras">
@@ -105,11 +111,20 @@
         </section>
         <hr />
 
-        <section class="submission">
-          <!--Add your code below-->
-          <input type="submit" value="Submit" />
+        <section class="submit">
+          <input type="submit" value="Haz tu pedido!" />
         </section>
       </form>
+    </section>
+    <section class="factura" hidden>
+      <h2>RESUMEN DE SU PEDIDO</h2>
+      <div>
+        <p class="object"></p>
+      </div>
+      <div>
+        <h3>Total a pagar:</h3>
+        <p class="amount"></p>
+      </div>
     </section>
   </body>
 </html>
