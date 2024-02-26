@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="main.css" />
     <link rel="icon" href="images.png" type="image/x-icon" />
-    <title>Al's Burgurs</title>
+    <title>Al's Burgers</title>
     <script type="module" src="index.js" defer></script>
   </head>
   <body>
@@ -14,18 +14,20 @@
       <form class="formulario">
         <h1>Crea tu hamburguesa</h1>
         <section class="carne">
-          <label for="patty">¿Qué tipo de carne quieres?</label>
+          <label for="carne">¿Qué tipo de carne quieres?</label>
           <input
             type="text"
-            name="proteina"
+            name="proteína"
             class="protein"
             placeholder="Pollo, ternera o añojo"
+            id="carne"
+            required
           />
         </section>
         <hr />
         <section class="filetes">
           <label for="amount">¿Cuántos filetes quieres?</label>
-          <input type="number" name="amount" class="amount" max="3" />
+          <input type="number" name="amount" class="amount" max="3" min="0" />
         </section>
         <hr />
         <section class="plancha">
@@ -51,6 +53,7 @@
             name="topping"
             class="topping"
             value="lechuga"
+            id="lechuga"
           />
           <label for="lechuga">lechuga</label>
           <input
@@ -58,6 +61,8 @@
             name="topping"
             class="topping"
             value="tomate"
+            id="tomate"
+            checked
           />
           <label for="tomate">tomate</label>
           <input
@@ -65,6 +70,7 @@
             name="topping"
             class="topping"
             value="cebolla"
+            id="cebolla"
           />
           <label for="cebolla">cebolla</label>
         </section>
@@ -91,15 +97,28 @@
         <section class="sauces">
           <span>¿Quieres alguna salsa?</span>
           <br />
-          <input type="checkbox" name="sauces" class="sauces" value="ketchup" />
+          <input
+            type="checkbox"
+            name="sauces"
+            class="sauces"
+            value="ketchup"
+            id="ketchup"
+          />
           <label for="ketchup">Ketchup</label>
-          <input type="checkbox" name="sauces" class="sauces" value="mostaza" />
+          <input
+            type="checkbox"
+            name="sauces"
+            class="sauces"
+            value="mostaza"
+            id="mostaza"
+          />
           <label for="mostaza">Mostaza</label>
           <input
             type="checkbox"
             name="sauces"
             class="sauces"
             value="mayonesa"
+            id="mayonesa"
           />
           <label for="mayonesa">Mayonesa</label>
         </section>

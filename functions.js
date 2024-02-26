@@ -1,25 +1,4 @@
 export const getOrder = () => {
-  let carne;
-  let filetes;
-  let plancha;
-  let topping;
-  let queso;
-  let pan;
-  let salsa;
-  let extras;
-  let cost = 2;
-
-  let order = {
-    carne: carne,
-    filetes: filetes,
-    plancha: plancha,
-    topping: topping,
-    queso: queso,
-    pan: pan,
-    salsa: salsa,
-    extras: extras,
-  };
-
   let mainSection = document.querySelector('.main');
   let billSection = document.querySelector('.factura');
 
@@ -55,42 +34,47 @@ export const getOrder = () => {
   };
 
   const onClickButtonRange = (event) => {
+    let plancha;
     const option = event.target.value;
-    if (option === 1) {
+    if (option === '1') {
       plancha = 'vuelta y vuelta';
     }
-    if (option === 2) {
+    if (option === '2') {
       plancha = 'poco hecha';
     }
-    if (option === 3) {
+    if (option === '3') {
       plancha = 'al punto';
     }
-    if (option === 4) {
+    if (option === '4') {
       plancha = 'hecha';
     }
-    if (option === 5) {
+    if (option === '5') {
       plancha = 'muy hecha';
     }
+    return plancha;
   };
 
   const onClickButtonRadio = (event) => {
     const option = event.target.value;
-    queso = option;
+    let queso = option;
+    return queso;
   };
 
   const onTextBoxInput = (event) => {
-    const option = event.target.value.toLowerCase();
-    carne = option;
+    const option = event.target.value;
+    let carne = option;
   };
 
   const onNumberInput = (event) => {
     const option = event.target.value;
-    filetes = option;
+    let filetes = option;
+    return filetes;
   };
 
   const onDropdownInput = (event) => {
     const option = event.target.value;
-    pan = option;
+    let pan = option;
+    return pan;
   };
 
   const onCheckboxInput = (event) => {
@@ -101,7 +85,7 @@ export const getOrder = () => {
         toppings.push(checkboxes[i].value);
       }
     }
-    topping = toppings;
+    return toppings;
   };
 
   const onCheckbox2 = (event) => {
@@ -112,16 +96,38 @@ export const getOrder = () => {
         sauces.push(checkboxes[i].value);
       }
     }
-    salsa = sauces;
+    return sauces;
   };
 
   const onTextarea = (event) => {
     const option = event.target.value;
-    extras = option;
+    let extras = option;
+    return extras;
   };
 
   const onSubmitForm = (event) => {
     event.preventDefault();
+    let carne = onTextBoxInput();
+    let filetes = onNumberInput();
+    let plancha = onClickButtonRange();
+    let topping = onCheckboxInput();
+    let queso = onClickButtonRadio();
+    let pan = onDropdownInput();
+    let salsa = onCheckbox2();
+    let extras = onTextarea();
+
+    let order = {
+      carne,
+      filetes,
+      plancha,
+      topping,
+      queso,
+      pan,
+      salsa,
+      extras,
+    };
+
+    let cost = 2 + determinePrice(order);
     let yourOrder = document.querySelector('.object');
     yourOrder.innerHTML = JSON.stringify(order);
     let yourAmount = document.querySelector('.amount');
